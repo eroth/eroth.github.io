@@ -1,5 +1,6 @@
 ---
 permalink: /archive/
+author_profile: true
 title: "All Posts"
 excerpt: "Archived posts for Hex Sells."
 layout: archive
