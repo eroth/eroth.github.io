@@ -31,7 +31,8 @@
 
 .archive__item-title {
   margin-bottom: 0.25em;
-  font-family: $sans-serif-narrow;
+  font-family: $header-font-family;
+  font-weight: $roboto-bold;
   line-height: initial;
   overflow: hidden;
   text-overflow: ellipsis;
