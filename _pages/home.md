@@ -6,3 +6,5 @@ header:
   overlay_filter: "0.4"
 excerpt: "A blog about tech musings, insights, opinions, and observations."
 ---
+
+{% include feature_row_latest_posts %}
