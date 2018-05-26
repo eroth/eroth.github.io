@@ -24,6 +24,6 @@ My library allows one to perform horizontal left or right justification (center 
 
 Here's a few screenshots of it in action:
 
-{% include gallery caption="Left and right justification on `ERJustifiedFlowLayout`." %}
+{% include gallery caption="*Left and right justification on `ERJustifiedFlowLayout`.*" %}
 
 There's a full tutorial on how to use it at the GitHub repo, as well as lots more screenshots.  Enjoy!

@@ -4,11 +4,23 @@ date: 2013-10-07 02:53:11+00:00
 layout: single
 title: Summer research project I participated in&#58; 'Supporting Social Data Research with NoSQL Databases&#58; Comparison of HBase and Riak'
 header:
-  image: /assets/images/posts/2015-06-20-erjustifiedflowlayout-for-ios/eroth-flowlayout-post-feature.png
-teaser_image_path: /assets/images/posts/2015-06-20-erjustifiedflowlayout-for-ios/teaser.png
-image:
-  teaser: 2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/teaser.jpg
-  feature: 2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/summer-research-post-feature.png
+  image: /assets/images/posts/2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/summer-research-post-feature.png
+teaser_image_path: /assets/images/posts/2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/teaser.jpg
+diffusion_gallery:
+  - url: /assets/images/posts/2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/truthy.png
+    image_path: /assets/images/posts/2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/truthy.png
+    alt: "Image showing information diffusion across Twitter for #bahrain hashtag"
+    title: "``#bahrain` hashtag network diffusion"
+riak_vs_hadoop_gallery:
+  - url: /assets/images/posts/2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/riak-vs-hadoop.png
+    image_path: /assets/images/posts/2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/riak-vs-hadoop.png
+    alt: "Graph showing comparison of Riak and Hadoop for data processing on datasets of various sizes."
+    title: "Riak vs Hadoop. As can be seen, Riak seemed to perform slower than Hadoop on smaller datasets but then started to catch up on larger ones."
+iu_campus_gallery:
+  - url: /assets/images/posts/2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/iu-campus.jpg
+    image_path: /assets/images/posts/2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/iu-campus0.jpg
+    alt: "Picture of the beautiful IU campus in the summer."
+    title: "Picture of the beautiful IU campus."
 ---
 
 This summer, I was accepted into a NSF-funded (National Science Foundation), two-month research project at [Indiana University in Bloomington](http://www.iub.edu/).  Sponsored by the [School of Informatics & Computing](http://www.soic.indiana.edu/) (SOIC), the program is designed to expose undergraduate students majoring in STEM fields to research taking place at the graduate level, in the hopes that they will elect to continue their education past a BS level.  These programs are also often called REUs (Research Experiences for Undergraduates) and are offered nationwide at various times throughout the year.
@@ -18,9 +30,7 @@ Seeing as how I've been interested in Big Data/Data Science for some time now, a
 
 But on to the project! Entitled "Supporting Social Data Research with NoSQL Databases: Comparison of HBase and Riak," its aim was to compare the performance of two open-source, NoSQL databases: Apache's [Hadoop/HBase](http://hadoop.apache.org/) and Basho's [Riak](http://basho.com/riak/) platforms.  We wished to compare them using a subset of the dataset of the [Truthy Project](http://truthy.indiana.edu/)—a project which gathered approximately 10% of all Twitter traffic (using the Twiiter Streaming API) over a two year period, in order to create a repository (i.e., gigantic data set) which social research scientists could conduct research with.  Several interesting research papers have come out of the Truthy Project, such as papers investigating the flow and dissemination of information during Occupy Wall Street and the Arab Spring uprisings.  In addition, the project researchers have also made very interesting images that portray information diffusion through users' Twitter networks:
 
-
-![](/images/2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/truthy.png)
-
+{% include gallery id="diffusion_gallery" caption="*Information diffusion graph through Twitter for hashtag `#bahrain`.*" %}
 
 Our project's goal ([link to project page](https://portal.futuregrid.org/projects/131)) was to first set up and then configure both Hadoop/HBase and Riak, in keeping with the data set we were working with and the types of queries we'd be performing.  I came in on the second half of the project—the first half, setting up and configuring Hadoop/HBase, and then loading data onto the nodes and running queries on it, had already been completed, so my portion dealt nearly exclusively with the Riak side of things. We had reserved eight nodes on IU's [FutureGrid](https://portal.futuregrid.org/) cluster, a shared academic cloud computing resource that researchers can use for their projects.  Our nodes were running CentOS (an enterprise Linux distro).  Some of the configuration details included creating schemas for our data and managing the data-loading onto our nodes.
 
@@ -30,13 +40,10 @@ Our results were very interesting, and seemed to highlight some of the differenc
 
 Below is a graph which illustrates the results of one meme search conducted across different time ranges on both Riak and HBase (click for larger view):
 
-
-![Untitled](/images/2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/riak-vs-hadoop.png)]
-
+{% include gallery id="riak_vs_hadoop_gallery" class="align-center" caption="*Comparison of Riak vs Hadoop when performing processing on datasets of various sizes.*" %}
 
 This histogram details the results for all tweets containing the meme "#ff" over periods of five, 10, 15, and 20 days.  The number of results returned is next to each search period (for example, the search over five days for "#ff" on Riak returned 353,468 tweets in 126 seconds that contained that the search term).  It is clear that, in this case, Riak is faster over a shorter period of time, but as both the search periods and result sizes increase, HBase scales to be far faster, exhibiting a much smaller, linear rate of growth than Riak.  If anyone would like to view my research poster for this project, [here is a link](https://dl.dropboxusercontent.com/u/84947503/Project%20Research%20Poster.pdf).
 
 In conclusion, this was a wonderful experience and only served to whet my appetite for future learning.  Just some of the languages, technologies, and skills I learned or were exposed to were: Python, Javascript, shell scripting, MapReduce, NoSQL databases, and cloud computing.  I leave you with a shot of the beautiful campus:
 
-
-![IMG_3633](/images/2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/img_3633.jpg)
+{% include gallery id="iu_campus_gallery" caption="*The IU campus during the summer.*" %}

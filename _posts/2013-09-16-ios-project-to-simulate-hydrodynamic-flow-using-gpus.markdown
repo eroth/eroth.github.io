@@ -16,6 +16,6 @@ Vladimir Tchernitski from Azoft took physics equations that model hydrodynamic 
 
 Really great results:
 
-[http://www.youtube.com/watch?v=2syPAIfY6R4](http://www.youtube.com/watch?v=2syPAIfY6R4)
+{% include video id="2syPAIfY6R4" provider="youtube" %}
 
 In addition, the article provides a great background about OpenGL and GPU-programming!
