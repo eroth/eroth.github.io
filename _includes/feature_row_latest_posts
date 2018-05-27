@@ -38,8 +38,8 @@
         {% endif %}
 
         <div class="archive__item-body">
-          {% if f.author %}
-            <h2 class="archive__item-title">{{ f.author }}</h2>
+          {% if f.title %}
+            <h2 class="archive__item-title">{{ f.title | truncate: 40 }}</h2>
           {% endif %}
 
           {% if f.excerpt %}
