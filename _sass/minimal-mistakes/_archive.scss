@@ -30,7 +30,8 @@
 }
 
 .archive__item-title {
-  margin-bottom: 0.25em;
+  margin-top: 0em;
+  margin-bottom: 0em;
   font-family: $header-font-family;
   font-weight: $roboto-bold;
   line-height: initial;
@@ -39,6 +40,11 @@
 
   a {
     color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   a + a {
@@ -103,6 +109,12 @@
    ========================================================================== */
 
 .list__item {
+  padding-top: 2em;
+
+  .archive__item-teaser {
+    margin-bottom: 0.5em;
+  }
+
   .page__meta {
     margin: 0 0 4px;
     font-size: 0.6em;
