@@ -21,6 +21,12 @@ iu_campus_gallery:
     image_path: /assets/images/posts/2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/iu-campus-preview.jpg
     alt: "Picture of the beautiful IU campus in the summer."
     title: "Picture of the beautiful IU campus."
+tags:
+  - Data Science
+  - IU
+  - Hadoop
+  - Riak
+  - Twitter
 ---
 
 This summer, I was accepted into a NSF-funded (National Science Foundation), two-month research project at [Indiana University in Bloomington](http://www.iub.edu/).  Sponsored by the [School of Informatics & Computing](http://www.soic.indiana.edu/) (SOIC), the program is designed to expose undergraduate students majoring in STEM fields to research taking place at the graduate level, in the hopes that they will elect to continue their education past a BS level.  These programs are also often called REUs (Research Experiences for Undergraduates) and are offered nationwide at various times throughout the year.

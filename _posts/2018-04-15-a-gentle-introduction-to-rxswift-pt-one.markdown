@@ -7,6 +7,10 @@ title: A Gentle Introduction to RxSwift, Part 1
 header:
   image: /assets/images/posts/2018-04-15-a-gentle-introduction-to-rxswift-pt-one/rxswift-introduction-feature.png
 teaser_image_path: /assets/images/posts/2018-04-15-a-gentle-introduction-to-rxswift-pt-one/teaser.png
+tags:
+  - iOS
+  - RxSwift
+  - Reactive Programming
 ---
 
 In late 2017, I started an iOS developer position in London that required my learning [RxSwift](https://github.com/ReactiveX/RxSwift).  At the time, it was a pretty foreign concept to me—I'd heard buzzwords like "Reactive programming" and "Rx" tossed around, and had done some research on what the concepts were, but even after reading about them it all seemed opaque and somewhat grandiose.  And it felt like a paradigm shift in thinking about how objects communicated with each other and in how I wrote code.

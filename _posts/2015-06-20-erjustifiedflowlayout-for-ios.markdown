@@ -16,6 +16,11 @@ gallery:
     image_path: /assets/images/posts/2015-06-20-erjustifiedflowlayout-for-ios/right-justified.png
     alt: "Screenshot showing right justification mode of ERJustifiedFlowLayout"
     title: "Right justification"
+tags:
+  - iOS
+  - UIKit
+  - UICollectionView
+  - Open Source
 ---
 
 I recently finished my first open source project—[ERJustifiedFlowLayout](https://github.com/eroth/ERJustifiedFlowLayout) (link to project on GitHub)! It's a tool for an iOS [`UICollectionView`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/), which is an incredibly versatile and powerful tool to display cell, row, or column content.  It uses a subclass of a `UICollectionViewFlowLayout`, which tells the collection view how to lay out its cells.

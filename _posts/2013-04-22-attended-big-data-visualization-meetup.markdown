@@ -10,6 +10,10 @@ gallery:
     image_path: /assets/images/posts/2013-04-22-attended-big-data-visualization-meetup/screen-shot-2014-04-26-at-12-12-15-pm.png
     alt: "Treemap: WHC Emergency Room"
     title: "Treemap: WHC Emergency Room"
+tags:
+  - Data Science
+  - UMD
+  - Information Visualization
 ---
 
 Location: [iStrategyLabs](http://istrategylabs.com/), Washington, DC

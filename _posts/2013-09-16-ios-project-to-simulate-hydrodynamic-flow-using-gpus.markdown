@@ -6,6 +6,10 @@ title: iOS project to simulate hydrodynamic flow using GPUs
 header:
   image: /assets/images/posts/2013-09-16-ios-project-to-simulate-hydrodynamic-flow-using-gpus/ios-gpu-post-feature.png
 teaser_image_path: /assets/images/posts/2013-09-16-ios-project-to-simulate-hydrodynamic-flow-using-gpus/teaser.png
+tags:
+  - iOS
+  - GPU
+  - OpenGL
 ---
 
 This is a really interesting project I came across recently!

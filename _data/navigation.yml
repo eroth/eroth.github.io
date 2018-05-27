@@ -2,3 +2,5 @@
 main:
   - title: "Archives"
     url: /archive/
+  - title: "Tags"
+    url: /tags/
