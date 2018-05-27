@@ -21,7 +21,7 @@
         {% else %}
           "{{ img.url | relative_url }}"
         {% endif %}
-        {% if img.title %}title="{{ img.title }}"{% endif %}
+        {% if img.title %}title="{{ img.title | remove: "<p>" }}"{% endif %}
       >
         <img src=
           {% if img.image_path contains "://" %}
