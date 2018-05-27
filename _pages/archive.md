@@ -3,9 +3,8 @@ permalink: /archive/
 author_profile: true
 title: "All Posts"
 excerpt: "Archived posts for Hex Sells."
-layout: archive
+layout: collection
+collection: posts
+entries_layout: grid
+classes: wide
 ---
-
-{% for post in site.posts %}
-  {% include archive-single.html %}
-{% endfor %}
