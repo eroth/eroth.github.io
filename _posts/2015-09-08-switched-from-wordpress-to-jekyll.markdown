@@ -1,8 +1,6 @@
 ---
-comments: true
 date: 2015-09-08 03:29:55+00:00
 modified: 2015-09-08 03:29:55+00:00
-layout: single
 title: Switched from Wordpress to Jekyll/GitHub Pages
 header:
   image: /assets/images/posts/2015-09-08-switched-from-wordpress-to-jekyll/jekyll-post-feature.png
