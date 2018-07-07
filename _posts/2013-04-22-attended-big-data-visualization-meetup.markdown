@@ -1,6 +1,4 @@
 ---
-comments: true
-layout: single
 title: Attended 'Big Data Visualization' meetup
 header:
   image: /assets/images/posts/2013-04-22-attended-big-data-visualization-meetup/big-data-post-feature.png

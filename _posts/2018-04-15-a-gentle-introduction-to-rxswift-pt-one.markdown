@@ -1,8 +1,6 @@
 ---
-comments: true
 date: 2018-04-15 03:29:55+00:00
 modified: 2018-04-15 03:29:55+00:00
-layout: single
 title: A Gentle Introduction to RxSwift, Part 1
 header:
   image: /assets/images/posts/2018-04-15-a-gentle-introduction-to-rxswift-pt-one/rxswift-introduction-feature.png
