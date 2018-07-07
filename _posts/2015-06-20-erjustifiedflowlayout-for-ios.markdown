@@ -1,8 +1,6 @@
 ---
-comments: true
 date: 2015-06-20 03:29:55+00:00
 last_modified_at: 2018-05-25 03:29:55+00:00
-layout: single
 title: "ERJustifiedFlowLayout for iOS"
 header:
   image: /assets/images/posts/2015-06-20-erjustifiedflowlayout-for-ios/eroth-flowlayout-post-feature.png

@@ -1,7 +1,5 @@
 ---
-comments: true
 date: 2013-09-16 13:45:31+00:00
-layout: single
 title: iOS project to simulate hydrodynamic flow using GPUs
 header:
   image: /assets/images/posts/2013-09-16-ios-project-to-simulate-hydrodynamic-flow-using-gpus/ios-gpu-post-feature.png

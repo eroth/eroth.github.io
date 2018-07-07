@@ -1,7 +1,5 @@
 ---
-comments: true
 date: 2013-10-07 02:53:11+00:00
-layout: single
 title: Summer research project I participated in&#58; 'Supporting Social Data Research with NoSQL Databases&#58; Comparison of HBase and Riak'
 header:
   image: /assets/images/posts/2013-10-07-summer-research-project-i-participated-in-supporting-social-data-research-with-nosql-databases-comparison-of-hbase-and-riak/summer-research-post-feature.png
