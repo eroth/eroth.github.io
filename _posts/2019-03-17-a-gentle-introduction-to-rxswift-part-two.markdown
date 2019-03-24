@@ -27,9 +27,19 @@ Now, for the `RxSwift` equivalent of the above closure example:
 
 What's going on here? In plain English, instead of passing in a closure argument to the `doSomethingRx()` function, we're returning an object which allows us to know when our function has done something; i.e., it provides us updates.  In `Rx` lingo, that object is called an `Observable` (and it's of type `String`).  In order to know about its updates, we *subscribe* to that observable which allows us to receive data whenever it *emits* events.  A *subscription* is just saying, "We want to know whenever this thing does something and every time it does we'll receive an update." It's the equivalent of plugging the lamp plug into the electrical outlet or turning on the garden hose, to use the earlier examples.  The `disposeBag` property you see (of type `DisposeBag`) is how `RxSwift` deals with breaking retain cycles on its objects—it deallocates the observable when its owning object is deallocated.
 
-Unfortunately, you won't see much of that streaming action here—as our observable is only returning one event—but imagine we had multiple requests coming from that function.  You would receive our `"result: We're using RxSwift!"` message each time a request completed.  A future post (hopefully, not too far in the future) will cover that in much more detail!  Of course, you could also use closures to accomplish the same thing, but as you'll see (if you start to use `RxSwift`) its power lies in its higher-order functions (called *operators*) and the nuances of control it offers you.
+Just like with the closure examples, we could have also done:
+```
+doSomethingRx()
+    .subscribe(onNext: { print("result: \($0)") })
+    .disposed(by: disposeBag)
+```
+
+Unfortunately, you won't see much of the aforementioned streaming action here—as our observable is only returning one event for this example—but imagine we had multiple requests coming from that function.  You would receive our `"result: We're using RxSwift!"` message each time a request completed.  A future post (hopefully, not too far in the future) will cover that in much more detail!  Of course, you could also use closures to accomplish the same thing, but as you'll see (if you start to use `RxSwift`) its power lies in its higher-order functions (called *operators*), the nuances of control it offers you, and its integration with `UIKit` via `RxCocoa`.
 
 As with any choice in design patterns or architecture, there are pros and cons to every decision we make as developers.
 
-Link to playground: <https://github.com/eroth/2019-03-17-RxSwift-Closures>
-Pull requests: <https://github.com/eroth/eroth.github.io/tree/develop/_posts>
+[Link to playground](https://github.com/eroth/2019-03-17-RxSwift-Closures)
+
+[Post pull requests](https://github.com/eroth/eroth.github.io/blob/develop/_posts/2019-03-17-a-gentle-introduction-to-rxswift-part-two.markdown)
+
+`Xcode 10 / iOS 12 / RxSwift 4.3.1`
