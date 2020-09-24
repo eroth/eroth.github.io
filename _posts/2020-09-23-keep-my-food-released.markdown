@@ -4,7 +4,7 @@ title: KeepMyFood iOS app released
 header:
   image: /assets/images/posts/2020-09-23-keep-my-food-released/header.png
 teaser_image_path: /assets/images/posts/2020-09-23-keep-my-food-released/teaser.png
-ipad_view_hierarchy:
+view_hierarchy_gallery:
   - url: /assets/images/posts/2020-09-23-keep-my-food-released/keep_my_food_ipad.png
     image_path: /assets/images/posts/2020-09-23-keep-my-food-released/keep_my_food_ipad.png
     alt: "Screenshot of the KeepMyFood iPad view hierarchy"
@@ -20,11 +20,11 @@ tags:
 - Swift
 ---
 
-To all my millions of readers, I have an announcement to make: My first iOS app, "KeepMyFood" was recently released and [is now available](https://apps.apple.com/us/app/keepmyfood-food-organizer/id1531074104) on the iOS App Store! The aim of it is to help people manage all the food in their household, which is typically in a variety of locations: refrigerator, pantry, freezer, etc.
+To all my millions of readers, I have an announcement to make: My first iOS app, "KeepMyFood," was recently released and [is now available](https://apps.apple.com/us/app/keepmyfood-food-organizer/id1531074104) on the iOS App Store! The aim of it is to help people manage all the food in their household, which is typically in a variety of locations: refrigerator, pantry, freezer, etc.
 
-Time and time again, I'd seen in our own household how we'd oftentimes forget we had food—only to realize down the line that it had gone off.  Not to mention all the times we'd purchased doubles of food we already had! And of course there are the [environmental costs](https://moveforhunger.org/the-environmental-impact-of-food-waste) of food waste made more awful and ironic by the amount of people dying of starvation or malnutrition.
+Time and time again, I'd seen in our own household how we'd oftentimes forget we had food only to realize down the line that it had gone off.  Not to mention all the times we'd purchased doubles of food we already had! And of course there are the [environmental costs](https://moveforhunger.org/the-environmental-impact-of-food-waste) of food waste made more awful and ironic by the amount of people dying of starvation or malnutrition.
 
-As can be imagined, there are a ton of features that could be added in an app like this: barcode scanning of food UPC labels, integrations with third party APIs, etc., so the real challenge for me was deciding what features I should include in `v1.0` and what should constitute an MVP for my idea.  Not having had any product management experience, this was a great exercise because as developers it's quite easy for us to keep _developing_ away.  I tried to approach this project from as organized a fashion as I could, as I wanted it to be well-thought-out and planned.  I'd like to go through a little of my approach in this post.
+As can be imagined, there are a ton of features that could be added in an app like this: barcode scanning of food UPC labels, integrations with third party APIs, etc., so the real challenge for me was deciding what features I should include in `v1.0` and what should constitute an MVP for my idea.  Not having had any product management experience, this was a great exercise because as developers it's quite easy for us to keep _developing_ away.  We can be like the [Energizer Bunny](https://en.wikipedia.org/wiki/Energizer_Bunny) sometimes (does anyone else know this reference??).  I tried to approach this project from as organized a fashion as I could, as I wanted it to be well-thought-out and planned.  I'd like to go through a little of my approach in this post.
 
 ## Requirements
 The first thing I did was to define my requirements.  For the `v1.0` release, I wanted the app to:
@@ -42,15 +42,17 @@ For services that were pretty turn-key and would allow me to do the things I lis
 
 It's a shame because I was long overdue for a re~~match~~visit with this library that had caused me quite a few pains in the past (probably entirely owing to my ineptitude at the time, I'm sure).  `Firebase`, while not without its faults and idiosyncrasies, seemed to handle syncing across multiple users and devices pretty seamlessly and easily, without hardly any setup overhead.  It was this feature (coupled with its NoSQL database approach and other backend-related services it offers) that eventually won me over.
 
+Not sure if I will ever get this far with it, but you can also write cloud functions to approximate backend services.  Note: If you decide to use `Firebase`, start by incorporating the [security rules](https://firebase.google.com/docs/rules) into your database design! I can assure you from experience it will save you loads of trouble down the road.
+
 ## View Hierarchy
 Due to the master-detail relationship of the data I was presenting (spaces->foods), the `UISplitViewController` was the obvious choice.  Not only is it built for this type of thing; it is also perfect for developing universal iPad/iPhone apps, as it can be readily configured to show two columns on regular width devices (e.g., iPad) while acting like a stock `UINavigationController` on compact width devices (e.g., iPhone).
 
 After I realized I'd need to add a user account section, I then decided to use a `UITabBarController` so users could toggle between their spaces/foods and their user account.  This led to my embedding the split view controller inside the tab bar controller, which worked out well.
 
-{% include gallery id="ipad_view_hierarchy" caption="*KeepMyFood iPad & iPhone screenshots.*" %}
+{% include gallery id="view_hierarchy_gallery" caption="*KeepMyFood iPad & iPhone screenshots—this is the same `UISplitViewController`.*" %}
 
 ## Views
-My view (pun intended) of how I was going to present the user's food list has changed over time.  Initially, I was going to allow the user to take a picture of a food and thus I was thinking I would model the UI off of Apple's Photos app.  It uses a `UICollectionView` and `UICollectionViewCell`.  However, after building out this UI, I decided to switch to a `UITableView` instead for several reasons.  I had decided against including food images in this first release, much more information could be displayed using `UITableViewCell`, and the table view comes with deletion actions/UI out of the box.
+My view (pun intended) of how I was going to present the user's food list has changed over time.  Initially, I was going to allow the user to take a picture of a food and thus I was thinking I would model the UI off of Apple's Photos app.  It uses a `UICollectionView` and `UICollectionViewCell` (of course, I can't be 100% certain but I feel pretty confident).  However, after building out this UI, I decided to switch to a `UITableView` instead for several reasons.  I had decided against including food images in this first release, much more information could be displayed using `UITableViewCell`, and the table view comes with deletion actions/UI out of the box.
 
 ## Libraries
 In addition to `Firebase`, I make heavy use of `RxSwift` in "KeepMyFood." As `Firebase`'s API makes use of a sockets approach (one sets up a connection to a node in one's database, and this connection sends through changes to this node and its children based on the types of events the client signs up to receive), I thought it lent itself well to the events-based, streaming approach of `RxSwift`.  I will expand upon this more in a later post, but I built a `Firebase` API client to centralize all its operations (reads, writes, deletions, etc.) and these methods returned `Observable` objects.
