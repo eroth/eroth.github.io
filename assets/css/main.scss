@@ -1,0 +1,17 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+// Variable overrides — defined before theme import so !default values are skipped
+$sans-serif: 'Open Sans', sans-serif;
+$header-font-family: 'Roboto', sans-serif;
+$roboto-bold: 500;
+$text-color: #000;
+$muted-text-color: mix(#fff, $text-color, 35%);
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+@import "custom"; // local overrides
